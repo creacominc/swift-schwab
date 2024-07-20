@@ -15,14 +15,17 @@ You can add swift-schwab to an Xcode project by adding it as a package dependenc
 ```swift
 import SchwabAPI
 
-let schwab = SchwabAPI(clientId: "your_client_id", clientSecret: "your_client_secret", redirectURI: "your_redirect_uri")
+let schwab = SchwabAPI(
+    clientId: "your_client_id",
+    clientSecret: "your_client_secret",
+    redirectURI: "your_redirect_uri")
 
 schwab.authenticate { result in
     switch result {
-      case .success:
-        print("Authentication successful")
-      case .failure(let error):
-        print("Authentication failed: \(error)")
+        case .success:
+          print("Authentication successful")
+        case .failure(let error):
+          print("Authentication failed: \(error)")
     }
 }
 ```
